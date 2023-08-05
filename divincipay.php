@@ -59,6 +59,15 @@ function my_custom_init_gateway_class()
                 "divincipay_payment_confirm_webhook",
             ]);
         }
+		
+		// Webhook that will run after Payment is Confirmed
+		function divincipay_payment_confirm_webhook()
+		{
+		    $order = wc_get_order($_GET["order_id"]);
+		    $order->payment_complete();
+		    $order->reduce_order_stock();
+		    update_option("webhook_debug", $_GET);
+		}
 
         public function init_form_fields()
         {
@@ -94,7 +103,7 @@ function my_custom_init_gateway_class()
 
         public function process_payment($order_id)
         {
-			$checkout_data = pay_via_metamask_get_checkout_total();
+			$checkout_data = pay_via_metamask_get_checkout_total($order_id);
             // Process the payment and redirect to the custom payment page
             $order = wc_get_order($order_id);
             $order->update_status(
@@ -105,7 +114,7 @@ function my_custom_init_gateway_class()
             // Redirect to the custom payment page URL
             return [
                 "result" => "success",
-                "redirect" => $checkout_data["data"]["payment_url"] , // Replace with the ID of your custom payment page
+                "redirect" => $checkout_data["data"]["payment_url"] ,
             ];
         }
     }
@@ -123,7 +132,7 @@ function my_custom_init_gateway_class()
 }
 
 // Callback function to get the checkout total
-function pay_via_metamask_get_checkout_total()
+function pay_via_metamask_get_checkout_total($order_id)
 {
     // Get the WooCommerce cart object
     $cart = WC()->cart;
@@ -146,6 +155,7 @@ function pay_via_metamask_get_checkout_total()
     $api_url = "https://divincipay.com/_functions/payment_wp";
     $api_url .= "?apiKey=" . urlencode($api_key);
     $api_url .= "&total_amount=" . urlencode($total_cart_price);
+	$api_url .= "&order_id=" . urlencode($order_id);
     $args = [
         "headers" => [
             "User-Agent" =>
@@ -169,11 +179,4 @@ function pay_via_metamask_get_checkout_total()
     return $data;
 }
 
-// Webhook that will run after Payment is Confirmed
-function divincipay_payment_confirm_webhook()
-{
-    $order = wc_get_order($_GET["id"]);
-    $order->payment_complete();
-    $order->reduce_order_stock();
-    update_option("webhook_debug", $_GET);
-}
+
