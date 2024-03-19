@@ -1,14 +1,22 @@
 <?php
+
+function divincipay_enqueue_styles() {
+    // Enqueue the custom CSS file
+    wp_enqueue_style('divincipay-styles', plugin_dir_url(__FILE__) . 'assets/styles.css');
+}
+add_action('admin_enqueue_scripts', 'divincipay_enqueue_styles');
+
+
 // Plugin settings page
 function divincipay_plugin_settings_page()
 {
     add_menu_page(
         "DivinciPay Settings",
-        "DivinciPay",
+        "DiVinciPay",
         "manage_options",
         "divincipay_plugin_settings",
         "divincipay_plugin_render_settings_page",
-        "dashicons-admin-generic"
+        plugins_url('assets/divincipay-icon.png', __FILE__)
     );
 }
 add_action("admin_menu", "divincipay_plugin_settings_page");
@@ -18,7 +26,7 @@ function divincipay_plugin_render_settings_page()
 {
     ?>
   <div class="wrap">
-    <h1>Divincipay Plugin Settings</h1>
+    <h1>DiVincipay Plugin Settings</h1>
     <form method="post" action="options.php">
       <?php
       settings_fields("divincipay_plugin_settings_group");
@@ -38,7 +46,7 @@ function divincipay_plugin_register_settings()
     );
     add_settings_section(
         "divincipay_plugin_settings_section",
-        "API Key Settings",
+        "DiVinciPay API Key Settings",
         "divincipay_plugin_settings_section_callback",
         "divincipay_plugin_settings"
     );
@@ -55,7 +63,7 @@ add_action("admin_init", "divincipay_plugin_register_settings");
 // Section callback
 function divincipay_plugin_settings_section_callback()
 {
-    echo "Enter your API key below:";
+    echo "<p>Enter your API key below. To get your API Key, Visit <a href='https://www.divincipay.com/wp-dashboard'>DiVincipay</a></p>";
 }
 
 // API key field callback

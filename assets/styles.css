@@ -1,0 +1,7 @@
+/* Adjust the size of the plugin settings icon */
+#toplevel_page_divincipay_plugin_settings .wp-menu-image img {
+  width: 20px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+}
