@@ -61,8 +61,10 @@ If you experience technical issues, please check our troubleshooting guide in th
 Yes, you can cancel your subscription at any time. Visit your account settings, navigate to the subscription section, and follow the prompts to cancel.
 
 == Screenshots ==
+1. Checkout View
 ![Checkout View](./assets/plugin_checkout.png)
-![Checkout View](./assets/api_key_settings.png)
+2. API Key Settings
+![API Key Settings](./assets/api_key_settings.png)
 
 == Upgrade Notice ==
 - None
