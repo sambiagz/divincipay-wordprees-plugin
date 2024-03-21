@@ -1,43 +1,26 @@
 === DivinciPay ===
 
 Contributors: botlogiclabs
-
 Donate link: https://divincipay.com
-
 Tags: crypto, metamask, ethereum, erc20, payment-request
-
 Requires at least: 4.3
 Tested up to: 6.4.3
 PHP Version: 7.4 or higher
 Stable tag: 4.3
-
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-DiVinciPay: Crypto payment plugin for Wordpress, accepting ERC20/BEP20 tokens for goods/services.
-
+DiVinciPay, Crypto payment plugin for Wordpress, accepting ERC20/BEP20 tokens for goods/services.
 == Description ==
 DiVinciPay is a crypto payment plugin that allows Wordpress websites to accept hundreds of ERC20 and BEP20 tokens as a method of payment for goods and services. Plugin features include:
-- NFT Marketing Integration
-DiVinciPay stands out as the sole platform providing NFT marketing through airdrops to token wallet holders, significantly boosting merchant exposure.
 
-- Versatile Token Acceptance
-DiVinciPay accommodates payments with a broad range of ERC-20 and BEP-20 tokens, accepting between 1 and 10,000 tokens to your checkout
-
-- Cross-Chain Non-Custodial Platform
-Built on both the Ethereum and Binance chains, DiVinciPay is a genuine non-custodian payment platform, providing users with enhanced security and control.
-
-- Direct Wallet-to-Wallet Transactions
-Enjoy seamless transactions as DiVinciPay facilitates direct transfers from the buyer's wallet to the merchant's wallet, eliminating the need for third-party custodians.
-
-- Exclusive Wen3.5 Integration
-As a true Web3.5 application, DiVinciPay integrates exclusively with MetaMask, ensuring a secure and immersive user experience.
-
-- Anti-Phishing Security 
-DiVinciPay is built as an anti-phishing platform because you are not connecting your website via Web3. DiVinciPay connects directly to the shopping cart, not the wallet.
-
-- NFT receipts.
-DiVinciPay empowers users to convert their receipts into NFTs, serving as tangible proof of payment for goods and services.
+- NFT Marketing Integration: DiVinciPay stands out as the sole platform providing NFT marketing through airdrops to token wallet holders, significantly boosting merchant exposure.
+- Versatile Token Acceptance: DiVinciPay accommodates payments with a broad range of ERC-20 and BEP-20 tokens, accepting between 1 and 10,000 tokens to your checkout
+- Cross-Chain Non-Custodial Platform: Built on both the Ethereum and Binance chains, DiVinciPay is a genuine non-custodian payment platform, providing users with enhanced security and control.
+- Direct Wallet-to-Wallet Transactions: Enjoy seamless transactions as DiVinciPay facilitates direct transfers from the buyer's wallet to the merchant's wallet, eliminating the need for third-party custodians.
+- Exclusive Wen3.5 Integration: As a true Web3.5 application, DiVinciPay integrates exclusively with MetaMask, ensuring a secure and immersive user experience.
+- Anti-Phishing Security: DiVinciPay is built as an anti-phishing platform because you are not connecting your website via Web3. DiVinciPay connects directly to the shopping cart, not the wallet.
+- NFT receipts: DiVinciPay empowers users to convert their receipts into NFTs, serving as tangible proof of payment for goods and services.
 
 
 == Installation ==
@@ -79,12 +62,13 @@ Yes, you can cancel your subscription at any time. Visit your account settings, 
 
 == Screenshots ==
 1. Desktop view
-![Checkout View](assets/plugin_checkout.png)
+![Checkout View](./assets/plugin_checkout.png)
+![Checkout View](./assets/api_key_settings.png)
 
 2. Mobile view
 
 == Upgrade Notice ==
-- No Upgrade
+- None
 
 == Changelog ==
 = v1.0.0 =
